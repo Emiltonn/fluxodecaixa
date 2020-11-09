@@ -29,6 +29,7 @@ class CreateEntitiesTable extends Migration
             $table->string('trading_name', 45);
             $table->string('cpf_cnpj', 15);
             $table->string('corporate_name', 45)->nullable();
+            $table->timestamps();
 
             $table->unique(["identity"], 'idprovider_UNIQUE');
         });

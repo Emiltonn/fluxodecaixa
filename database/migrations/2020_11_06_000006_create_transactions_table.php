@@ -30,6 +30,7 @@ class CreateTransactionsTable extends Migration
             $table->enum('type_transaction', ['egress', 'income']);
             $table->unsignedInteger('account_idaccount');
             $table->unsignedInteger('entity_identity');
+            $table->timestamps();
 
             $table->index(["entity_identity"], 'fk_transaction_entity1_idx');
 

@@ -23,13 +23,19 @@ class Entity extends Model
     /**
      * @var array
      */
-    protected $fillable = ['trading_name', 'cpf_cnpj', 'corporate_name'];
+    protected $fillable = [
+        'type_registry',
+        'type_entity',
+        'trading_name',
+        'cpf_cnpj',
+        'corporate_name'
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transactions()
     {
-        return $this->hasMany('App\Transaction', 'entity_identity', 'identity');
+        return $this->hasMany('App\Models\Transaction', 'entity_identity', 'identity');
     }
 }
