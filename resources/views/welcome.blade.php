@@ -62,19 +62,19 @@
           <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link" href="/dashboard">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/transactions/">
                   <span data-feather="activity"></span>
                   Transações
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/entities/">
                   <span data-feather="users"></span>
                   Entidades
                 </a>
@@ -156,5 +156,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script src="{{ asset('site/js/dashboard.js') }}"></script>
+    <script>
+      window.onload = (function(){
+        $('#sidebarMenu a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+      });
+    </script>
   </body>
 </html>
+

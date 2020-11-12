@@ -25,11 +25,14 @@ class EntityController extends Controller
    
     public function store(Request $request)
     {
+        dd($request->all());
+
         $request->validate([
             'trading_name' => 'required',
             'cpf_cnpj' => 'required',
+            'type_registry' => 'required|in:cliente,provider,both',
+            'type_entity' => 'required|in:natural,legal',
         ]);
-    
         Entity::create($request->all());
     
         return redirect()->route('entities.index')

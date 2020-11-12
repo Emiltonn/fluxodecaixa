@@ -23,7 +23,7 @@
             <th>No</th>
             <th>Name</th>
             <th>Cpf/Cnpj</th>
-            <th width="280px">Action</th>
+            <th width="280px">Ação</th>
         </tr>
         @foreach ($entities as $entity)
         <tr>
