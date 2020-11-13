@@ -5,9 +5,9 @@
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2> Visualizar Entidade</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('entities.index') }}"> Voltar</a>
+                <div class="pull-right float-right">
+                    <a class="btn btn-primary" href="{{ route('entities.index') }}"> Voltar</a>
+                </div>
             </div>
         </div>
     </div>
@@ -17,6 +17,8 @@
             <div class="form-group">
                 <strong>Nome:</strong>
                 {{ $entity->trading_name }}
+                <strong>Tipo de Entidade:</strong>
+                <p class="text-capitalize">{{ $entity->type_entity }}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

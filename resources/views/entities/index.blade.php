@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Lista de Entidades</h2>
+                <h2>Lista de Clientes/Fornecedores</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('entities.create') }}"> Adicionar nova Entidade</a>
@@ -21,6 +21,7 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
+            <th>Entidade</th>
             <th>Name</th>
             <th>Cpf/Cnpj</th>
             <th width="280px">Ação</th>
@@ -28,6 +29,7 @@
         @foreach ($entities as $entity)
         <tr>
             <td>{{ ++$i }}</td>
+            <td>{{ $entity->type_entity == "legal" ? "Jurídica" : "Física"}}</td>
             <td>{{ $entity->trading_name }}</td>
             <td>{{ $entity->cpf_cnpj }}</td>
             <td>
